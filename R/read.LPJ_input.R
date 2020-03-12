@@ -14,6 +14,7 @@
 #' useful to handle large datasets. Overwrites four_d
 #' @param four_d if true, it is assumed that data exists for both rainfed and
 #' irrigated crops.
+#' @param ncells number of cells
 #' @param swap Depends on the binary format of the data
 #' @return \item{x}{LPJ-object}
 #' @author Benjamin Bodirsky, Susanne Rolinski
