@@ -38,7 +38,7 @@ In case of questions / problems please contact Jan Philipp Dietrich <dietrich@pi
 
 To cite package **lpjclass** in publications use:
 
-Waha K, Bodirsky B, Roliniski S, Philipp Dietrich J, P. P. Alves M (2020). _lpjclass: LPJ Class Functions_. R package version
+Waha K, Bodirsky B, Roliniski S, Dietrich J P, P. P. Alves M (2020). _lpjclass: LPJ Class Functions_. R package version
 1.15.0.
 
 A BibTeX entry for LaTeX users is
@@ -46,7 +46,7 @@ A BibTeX entry for LaTeX users is
  ```latex
 @Manual{,
   title = {lpjclass: LPJ Class Functions},
-  author = {Katharina Waha and Benjamin Bodirsky and Susanne Roliniski and Jan {Philipp Dietrich} and Marcos {P. P. Alves}},
+  author = {Katharina Waha and Benjamin Bodirsky and Susanne Roliniski and Jan Philipp Dietrich and Marcos {P. P. Alves}},
   year = {2020},
   note = {R package version 1.15.0},
 }
