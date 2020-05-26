@@ -1,8 +1,8 @@
 Package: lpjclass
 Type: Package
 Title: LPJ Class Functions
-Version: 1.13.0.9001
-Date: 2019-01-29
+Version: 1.15.0
+Date: 2020-05-26
 Author: Susanne Roliniski, Benjamin Bodirsky, Katharina Waha, Jan Philipp Dietrich
 Maintainer: Susanne Rolinski <rolinski@pik-potsdam.de>
 Description: Package containing the LPJ-Object-Class together with relevant functions and methods.
@@ -11,5 +11,5 @@ Imports: magclass,
 		 utils
 License: LGPL-3 | file LICENSE
 LazyData: no
-RoxygenNote: 6.1.1
-ValidationKey: 202713842925
+RoxygenNote: 7.1.0
+ValidationKey: 21169200
