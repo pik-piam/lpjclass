@@ -6,11 +6,7 @@
 #' far, tested for landuse input.
 #'
 #' @usage read.LPJ_input(file_name, out_years=c("y1995","y2005"),
-<<<<<<< HEAD
 #' namesum=FALSE, four_d=FALSE, ncells=59199, swap="little")
-=======
-#' namesum=FALSE, four_d=FALSE,ncells=59199,swap="little")
->>>>>>> f6aca7f541400229a6cef3099809d1b91dabdc73
 #' @param file_name Filename with extension and folder
 #' @param out_years years to be red out in the form of a vector of year
 #' strings, e.g. c(y1995,y2005)
@@ -18,11 +14,7 @@
 #' useful to handle large datasets. Overwrites four_d
 #' @param four_d if true, it is assumed that data exists for both rainfed and
 #' irrigated crops.
-<<<<<<< HEAD
 #' @param ncells number of cells 
-=======
-#' @param ncells number of cells
->>>>>>> f6aca7f541400229a6cef3099809d1b91dabdc73
 #' @param swap Depends on the binary format of the data
 #' @return \item{x}{LPJ-object}
 #' @author Benjamin Bodirsky, Susanne Rolinski
@@ -52,21 +44,13 @@ read.LPJ_input <- function(file_name,               # Filename with or without e
   #grid_67420_59199<- as.integer(readBin("soil.bin",what=raw(),size=1,n=67420))
   #grid_67420_59199[which(grid_67420_59199>=1)]<-1
   #landusedata$grid_67420_59199<-grid_67420_59199
-<<<<<<< HEAD
-  
+
   if(ncells==67420){
     out_ncells<-length(grid_67420_59199)
   } else if(ncells==59199){
     out_ncells<-length(grid_67420_59199[which(grid_67420_59199!=0)])    
   } else {stop("Wrong number of cells provided (use 67420 or 59199).")}  
-=======
 
-  if(ncells==67420){
-    out_ncells<-length(grid_67420_59199)
-  } else if(ncells==59199){
-    out_ncells<-length(grid_67420_59199[which(grid_67420_59199!=0)])
-  } else {stop("Wrong number of cells provided (use 67420 or 59199).")}
->>>>>>> f6aca7f541400229a6cef3099809d1b91dabdc73
 
   filedata<-file(description = file_name, open = "rb", blocking = TRUE,encoding = getOption("encoding"))
     seek(filedata,where=7,origin="start")
@@ -79,17 +63,9 @@ read.LPJ_input <- function(file_name,               # Filename with or without e
     in_header   <- readBin(filedata,what=numeric(),size=4,n=2,endian=.Platform$endian)
     in_cellsize <- in_header[1]
     in_scalar   <- in_header[2]
-<<<<<<< HEAD
 
     in_years    <- paste("y",in_syear+(1:in_nyears)-1,sep="")
     in_nbytes   <- 2
-  
-=======
-
-    in_years    <- paste("y",in_syear+(1:in_nyears)-1,sep="")
-    in_nbytes   <- 2
-
->>>>>>> f6aca7f541400229a6cef3099809d1b91dabdc73
 
     in_file_size <- file.info(file_name)$size
     if(in_file_size!=in_headbytes+in_nyears*in_ncells*in_ncolumns*as.double(in_nbytes)){stop("file size does not fit header")}
