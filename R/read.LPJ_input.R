@@ -15,7 +15,7 @@
 #' @param ncells number of cells 
 #' @param swap Depends on the binary format of the data
 #' @return \item{x}{LPJ-object}
-#' @author Benjamin Bodirsky, Susanne Rolinski
+#' @author Benjamin Bodirsky, Susanne Roliniski, Marcos P. P. Alves
 #' @export
 #' @importFrom magclass isYear
 #' @seealso \code{\link{readLPJ}}
