@@ -1,15 +1,19 @@
 Package: lpjclass
 Type: Package
 Title: LPJ Class Functions
-Version: 1.13.0.9001
-Date: 2019-01-29
-Author: Susanne Roliniski, Benjamin Bodirsky, Katharina Waha, Jan Philipp Dietrich
-Maintainer: Susanne Rolinski <rolinski@pik-potsdam.de>
+Version: 1.15.0
+Date: 2020-05-26
+Authors@R: c(person("Katharina", "Waha", role = "aut"),
+             person("Benjamin", "Bodirsky", role = "aut"),
+             person("Susanne", "Roliniski", role = "aut"),
+             person("Jan Philipp", "Dietrich", email = "dietrich@pik-potsdam.de", role = c("aut","cre")),
+             person("Marcos", "P. P. Alves", role = "aut"))
 Description: Package containing the LPJ-Object-Class together with relevant functions and methods.
 Depends: R (>= 2.10), methods
 Imports: magclass,
 		 utils
 License: LGPL-3 | file LICENSE
 LazyData: no
-RoxygenNote: 6.1.1
-ValidationKey: 202713842925
+RoxygenNote: 7.1.0
+ValidationKey: 21169200
+Encoding: UTF-8
