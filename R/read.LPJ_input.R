@@ -5,8 +5,6 @@
 #' This function reads in LPJ-input files, using its header information. So
 #' far, tested for landuse input.
 #'
-#' @usage read.LPJ_input(file_name, out_years=c("y1995","y2005"),
-#' namesum=FALSE, four_d=FALSE, ncells=59199, swap="little")
 #' @param file_name Filename with extension and folder
 #' @param out_years years to be red out in the form of a vector of year
 #' strings, e.g. c(y1995,y2005)
