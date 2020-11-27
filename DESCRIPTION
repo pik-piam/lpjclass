@@ -1,8 +1,8 @@
 Package: lpjclass
 Type: Package
 Title: LPJ Class Functions
-Version: 1.15.0
-Date: 2020-05-26
+Version: 1.16.0
+Date: 2020-11-27
 Authors@R: c(person("Katharina", "Waha", role = "aut"),
              person("Benjamin", "Bodirsky", role = "aut"),
              person("Susanne", "Roliniski", role = "aut"),
@@ -14,6 +14,5 @@ Imports: magclass,
 		 utils
 License: LGPL-3 | file LICENSE
 LazyData: no
-RoxygenNote: 7.1.0
-ValidationKey: 21169200
+RoxygenNote: 7.1.1
 Encoding: UTF-8

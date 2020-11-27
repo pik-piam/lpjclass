@@ -9,7 +9,7 @@
 #' @usage readLPJ(file_name, wyears, syear=1901, averaging_range = NULL,
 #' file_folder = "", file_type = NULL, bands = 41, monthly = FALSE, bytes = 4,
 #' years = NULL, ncells = 59199,soilcells=FALSE, headlines = 0, datatype =
-#' numeric(), gridfile = "")
+#' numeric(), gridfile = "", flexbands=FALSE)
 #' @param file_name a character string naming a file with extension but without
 #' folder
 #' @param wyears integer. a vector containing the years of interest
@@ -29,6 +29,7 @@
 #' @param headlines integer. The size of header, for output files = 0
 #' @param datatype a R data type
 #' @param gridfile a character string, currently not used
+#' @param flexbands reads in cfts for any number of bands, assumes only cfts, must be named later
 #' @return \item{x}{LPJ-object}
 #' @author Susanne Roliniski, Benjamin Bodirsky
 #' @export
@@ -57,23 +58,24 @@
 # 1.10: added error for invalid choice of averaging range or wyears (jpd)
 # 1.11: corrected typo in lpj names ("groudnut") (jpd)
 # 1.12: added case bands=35 (pfts + cfts 1-13) (jpd)
-
+#1.13: add flexbands switch 
 
 readLPJ <- function(file_name,             # Filename with or without extention and folder
-                    wyears,                 # year or years of output
+                    wyears,                # year or years of output
                     syear=1901,            # first year of simulation (standard=1901)
                     averaging_range=NULL,  # number of years that should be used for averaging
                     file_folder="",        # folder of lpj file
                     file_type=NULL,        # extention of lpj file
                     bands=41,              # number of crop bands in lpj output, 16 for cfts, 9 for pfts, 41 for pfts, rainfed and irrigated cfts
-                    monthly=FALSE,          # switch for monthly data
+                    monthly=FALSE,         # switch for monthly data
                     bytes=4,               # size of data in binary lpj file
                     years=NULL,            # number of simulated years
                     ncells=59199,          # number of grid cells in lpj file
                     soilcells=FALSE,       # should the cells with no soil information be discarded (only for 67420 cells)
                     headlines=0,           # number of lines in the header of lpj file
-                    datatype=numeric(),
-                    gridfile="") {         # respective gridfile in same folder
+                    datatype=numeric(),  # respective gridfile in same folder
+                    gridfile="",
+                    flexbands=FALSE     ) {    # option to read any number of cft bands 
   #require(ludata)
  # data("ludata", envir = environment(), package="ludata")
 #  lud <- ludata
@@ -216,7 +218,15 @@ readLPJ <- function(file_name,             # Filename with or without extention 
           subbands <- 1
           outputdimnames[[3]] <- c(band_names_pfts, band_names_cfts)
           outputdimnames[[4]] <- c("rainfed","irrigated")
-      } else {stop("Unknown number of bands")}
+      } else {
+        if(flexbands){
+          warning("non-standard number of bands: assume reading only cfts, must still be named!")
+          outputdimnames[[3]] <- c(paste0("cft_",seq(1,bands)))
+          outputdimnames[[4]] <- c("rainfed","irrigated")
+        } else {
+          stop("Unknown number of bands")
+        }
+      }
 
       #Prepare averaging
       if(is.null(averaging_range)) averaging_range <- 1
