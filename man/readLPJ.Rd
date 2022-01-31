@@ -59,10 +59,12 @@ number of years in file will be calculated automatically if years=NULL
 }
 \examples{
 
-  ##Example for the LPJmL output file pft_harvest.pft.bin containing crop yields in gC/m2
-  \dontrun{yield<-readLPJ(file_name="pft_harvest.pft.bin",wyears=c(1998:2002),
-  file_folder="D:/LPJ/Trunk_2010_03_25/output/simulated_sdate/",
-	bands=26,gridfile="D:/LPJ/Trunk_2010_03_25/output/simulated_sdate/grid.bin")} 
+## Example for the LPJmL output file pft_harvest.pft.bin containing crop yields in gC/m2
+\dontrun{
+yield <- readLPJ(file_name = "pft_harvest.pft.bin", wyears = c(1998:2002),
+  file_folder = "D:/LPJ/Trunk_2010_03_25/output/simulated_sdate/",
+        bands = 26, gridfile = "D:/LPJ/Trunk_2010_03_25/output/simulated_sdate/grid.bin")
+}
 
 }
 \seealso{

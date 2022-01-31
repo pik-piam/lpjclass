@@ -1,8 +1,8 @@
 # LPJ Class Functions
 
-R package **lpjclass**, version **1.17.0**
+R package **lpjclass**, version **1.18.0**
 
-[![CRAN status](https://www.r-pkg.org/badges/version/lpjclass)](https://cran.r-project.org/package=lpjclass)    
+[![CRAN status](https://www.r-pkg.org/badges/version/lpjclass)](https://cran.r-project.org/package=lpjclass)  [![R build status](https://github.com/pik-piam/lpjclass/workflows/check/badge.svg)](https://github.com/pik-piam/lpjclass/actions) [![codecov](https://codecov.io/gh/pik-piam/lpjclass/branch/master/graph/badge.svg)](https://app.codecov.io/gh/pik-piam/lpjclass) [![r-universe](https://pik-piam.r-universe.dev/badges/lpjclass)](https://pik-piam.r-universe.dev/ui#builds)
 
 ## Purpose and Functionality
 
@@ -38,7 +38,7 @@ In case of questions / problems please contact Jan Philipp Dietrich <dietrich@pi
 
 To cite package **lpjclass** in publications use:
 
-Waha K, Bodirsky B, Roliniski S, Dietrich J, P. P. Alves M (2021). _lpjclass: LPJ Class Functions_. R package version 1.17.0.
+Waha K, Bodirsky B, Roliniski S, Dietrich J, P. P. Alves M (2022). _lpjclass: LPJ Class Functions_. R package version 1.18.0.
 
 A BibTeX entry for LaTeX users is
 
@@ -46,8 +46,7 @@ A BibTeX entry for LaTeX users is
 @Manual{,
   title = {lpjclass: LPJ Class Functions},
   author = {Katharina Waha and Benjamin Bodirsky and Susanne Roliniski and Jan Philipp Dietrich and Marcos {P. P. Alves}},
-  year = {2021},
-  note = {R package version 1.17.0},
+  year = {2022},
+  note = {R package version 1.18.0},
 }
 ```
-
