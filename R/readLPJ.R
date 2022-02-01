@@ -186,7 +186,7 @@ readLPJ <- function(file_name,               # Filename with or without extentio
         subbands <- 1
         outputdimnames[[3]] <- month_names
         outputdimnames[[4]] <- list("data")
-      } else if (bands == pfts2) {
+      } else if (bands == 1 + pfts2) {
         subbands <- 1
         outputdimnames[[3]] <- c("fraction natural vegetation", band_names_pfts2)
         outputdimnames[[4]] <- list("data")
