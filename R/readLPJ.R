@@ -104,11 +104,11 @@ readLPJ <- function(file_name,               # Filename with or without extentio
                        "TEMPERATE_BROADLEAVED_SUMMERGREEN_TREE", "BOREAL_NEEDLELEAVED_EVERGREEN_TREE",
                        "BOREAL_BROADLEAVED_SUMMERGREEN_TREE", "C3_PERENNIAL_GRASS", "C4_PERENNIAL_GRASS")
   month_names <- c("jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec")
-  band_names_pfts2 <- c("Tropical broadleaved evergreen tree", "Tropical broadleaved raingreen tree",
-                        "Temperate needleleaved evergreen tree", "Temperate broadleaved evergreen tree",
-                        "Temperate broadleaved summergreen tree", "Boreal needleleaved evergreen tree",
-                        "Boreal broadleaved summergreen tree", "Boreal needleleaved summergreen tree",
-                        "Tropical herbaceous (C4)", "Temperate herbaceous (C3)", "Polar herbaceous (C3)")
+  band_names_pfts2 <- c("tropical broadleaved evergreen tree", "tropical broadleaved raingreen tree",
+                        "temperate needleleaved evergreen tree", "temperate broadleaved evergreen tree",
+                        "temperate broadleaved summergreen tree", "boreal needleleaved evergreen tree",
+                        "boreal broadleaved summergreen tree", "boreal needleleaved summergreen tree",
+                        "Tropical C4 grass", "Temperate C3 grass", "Polar C3 grass")
   pfts  <- 9
   pfts2 <- 11
   cfts  <- 16
