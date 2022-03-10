@@ -4,10 +4,25 @@
 \alias{readLPJ}
 \title{readLPJ}
 \usage{
-readLPJ(file_name, wyears, syear=1901, averaging_range = NULL,
-file_folder = "", file_type = NULL, bands = 41, monthly = FALSE, bytes = 4,
-years = NULL, ncells = 59199,soilcells=FALSE, headlines = 0, datatype =
-numeric(), gridfile = "", flexbands=FALSE)
+readLPJ(
+  file_name,
+  wyears,
+  syear = 1901,
+  averaging_range = NULL,
+  file_folder = "",
+  file_type = NULL,
+  bands = 41,
+  monthly = FALSE,
+  bytes = 4,
+  years = NULL,
+  ncells = 59199,
+  soilcells = FALSE,
+  headlines = 0,
+  datatype = numeric(),
+  gridfile = "",
+  cellyear = FALSE,
+  flexbands = FALSE
+)
 }
 \arguments{
 \item{file_name}{a character string naming a file with extension but without
@@ -44,6 +59,8 @@ the 59199 for MAgPIE be returned?}
 
 \item{gridfile}{a character string, currently not used}
 
+\item{cellyear}{Switch for input data format. Cellyear is the new lpjml input format. When reading in lpjml outputs set to false.}
+
 \item{flexbands}{reads in cfts for any number of bands, assumes only cfts, must be named later}
 }
 \value{
@@ -71,5 +88,5 @@ yield <- readLPJ(file_name = "pft_harvest.pft.bin", wyears = c(1998:2002),
 \code{\link{read.LPJ_input}}
 }
 \author{
-Susanne Roliniski, Benjamin Bodirsky
+Susanne Rolinski, Benjamin Bodirsky
 }
