@@ -15,4 +15,3 @@ Round-method for LPJ-objects respectively. Works exactly as for arrays.
 
 }
 }
-
