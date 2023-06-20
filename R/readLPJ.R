@@ -146,11 +146,11 @@ readLPJ <- function(file_name,               # Filename with or without extentio
 
       # check for number of cells
       ssz <- (ss - headlines) / bands / bytes
-      if (round(ssz / ncells) != ssz / ncells) {
-        if (round(ssz / 59199) == ssz / 59199) {
+      if (round(ssz / ncells, digits = 100) != ssz / ncells) {
+        if (round(ssz / 59199, digits = 100) == ssz / 59199) {
           warning("ncells changed from ", ncells, "to 59199")
           ncells <- 59199
-        } else if (round(ssz / 67420) == ssz / 67420) {
+        } else if (round(ssz / 67420, digits = 100) == ssz / 67420) {
           warning("ncells changed from ", ncells, "to 67420")
           ncells <- 67420
         } else {
