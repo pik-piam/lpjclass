@@ -133,7 +133,7 @@ readLPJ <- function(file_name,               # Filename with or without extentio
       ss <- file.info(file_name)$size
       ssz <- (ss - headlines) / bands / bytes
       # check for number of bands
-      if (round(ssz) != ssz) {
+      if (round(ssz, digits = 10) != ssz) {
         obands <- bands
         nofit <- TRUE
         while (nofit) {

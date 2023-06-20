@@ -6,3 +6,7 @@
 ^\.github$
 ^codecov\.yml$
 ^workflow$
+^Makefile$
+^.lintr$
+^tests/.lintr$
+^.*CITATION.cff$
