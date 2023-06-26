@@ -79,6 +79,8 @@ readLPJ <- function(file_name,               # Filename with or without extentio
                     cellyear = FALSE,       # switch for reading in binaries in cellyear format
                     flexbands = FALSE) {    # option to read any number of cft bands
 
+  .testInteger <- function(x) {return(all.equal(x, as.integer(x)))}
+
   if (monthly == TRUE) {
     bands <- 12
   }
@@ -133,13 +135,13 @@ readLPJ <- function(file_name,               # Filename with or without extentio
       ss  <- as.integer(file.info(file_name)$size)
       ssz <- (ss - headlines) / bands / bytes
       # check for number of bands
-      if (round(ssz, digits = 10) != ssz) {
+      if (.testInteger(ssz)) {
         obands <- bands
         nofit <- TRUE
         while (nofit) {
           bands <- bands - 1
           ssz <- (ss - headlines) / bands / bytes
-          if (round(ssz, digits = 10) == ssz) nofit <- FALSE
+          if (.testInteger(ssz)) nofit <- FALSE
         }
         warning(paste("number of bands (", obands, ") changed to", bands))
       }
@@ -147,11 +149,11 @@ readLPJ <- function(file_name,               # Filename with or without extentio
       # check for number of cells
       ssz <- (ss - headlines) / bands / bytes
       ssz <- as.integer(ssz)
-      if (round(ssz / ncells, digits = 10) != ssz / ncells) {
-        if (round(ssz / 59199, digits = 10) == ssz / 59199) {
+      if (.testInteger(ssz / ncells)) {
+        if (.testInteger(ssz / 59199)) {
           warning("ncells changed from ", ncells, "to 59199")
           ncells <- 59199
-        } else if (round(ssz / 67420, digits = 10) == ssz / 67420) {
+        } else if (.testInteger(ssz / 67420)) {
           warning("ncells changed from ", ncells, "to 67420")
           ncells <- 67420
         } else {
@@ -166,12 +168,12 @@ readLPJ <- function(file_name,               # Filename with or without extentio
 
       if (is.null(years)) {
         years <- (ss - headlines) / bands / ncells / bytes
-        if (years != round(years, digits = 10)) stop(paste("inconsistent data set, calculation of number of years
+        if (!.testInteger(years)) stop(paste("inconsistent data set, calculation of number of years
                                               delivered an non-integer result of", years))
       } else {
         # check for number of years
         ssz <- (ss - headlines) / bands / bytes / years
-        if (round(ssz, digits = 10) != ssz) stop(paste("number of years in file are not", years))
+        if (!.testInteger(ssz)) stop(paste("number of years in file are not", years))
       }
 
       outputdimnames <- list()
