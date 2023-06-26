@@ -80,8 +80,8 @@ readLPJ <- function(file_name,               # Filename with or without extentio
                     flexbands = FALSE) {    # option to read any number of cft bands
 
   if (monthly == TRUE) {
- bands <- 12
- }
+    bands <- 12
+  }
 
   # if file-type is not mentioned file-ending is used as file-type
   if (is.null(file_type)) {
@@ -146,11 +146,12 @@ readLPJ <- function(file_name,               # Filename with or without extentio
 
       # check for number of cells
       ssz <- (ss - headlines) / bands / bytes
-      if (round(ssz / ncells, digits = 100) != ssz / ncells) {
-        if (round(ssz / 59199, digits = 100) == ssz / 59199) {
+      ssz <- as.integer(ssz)
+      if (round(ssz / ncells, digits = 10) != ssz / ncells) {
+        if (round(ssz / 59199, digits = 10) == ssz / 59199) {
           warning("ncells changed from ", ncells, "to 59199")
           ncells <- 59199
-        } else if (round(ssz / 67420, digits = 100) == ssz / 67420) {
+        } else if (round(ssz / 67420, digits = 10) == ssz / 67420) {
           warning("ncells changed from ", ncells, "to 67420")
           ncells <- 67420
         } else {
@@ -238,7 +239,7 @@ readLPJ <- function(file_name,               # Filename with or without extentio
       }
       # in the case of an even number of years, that should be used for averaging,
       # the average is not symmetric to the corresponding year
-      # in this case one year more is taken in the past then in the future of the correspsonding year
+      # in this case one year more is taken in the past then in the future of the corresponding year
       averagingSteps <- -floor(averaging_range / 2) + (0:(averaging_range - 1))
 
 
