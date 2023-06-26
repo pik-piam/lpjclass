@@ -1,7 +1,7 @@
 Package: lpjclass
 Type: Package
 Title: LPJ Class Functions
-Version: 1.19.3
+Version: 1.19.4
 Date: 2023-06-26
 Authors@R: c(person("Katharina", "Waha", role = "aut"),
              person("Benjamin", "Bodirsky", role = "aut"),

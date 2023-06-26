@@ -130,7 +130,7 @@ readLPJ <- function(file_name,               # Filename with or without extentio
 
   if (file.exists(file_name)) {
     if (file_type == "bin") {
-      ss <- file.info(file_name)$size
+      ss  <- as.integer(file.info(file_name)$size)
       ssz <- (ss - headlines) / bands / bytes
       # check for number of bands
       if (round(ssz, digits = 10) != ssz) {
@@ -139,7 +139,7 @@ readLPJ <- function(file_name,               # Filename with or without extentio
         while (nofit) {
           bands <- bands - 1
           ssz <- (ss - headlines) / bands / bytes
-          if (round(ssz) == ssz) nofit <- FALSE
+          if (round(ssz, digits = 10) == ssz) nofit <- FALSE
         }
         warning(paste("number of bands (", obands, ") changed to", bands))
       }
@@ -166,12 +166,12 @@ readLPJ <- function(file_name,               # Filename with or without extentio
 
       if (is.null(years)) {
         years <- (ss - headlines) / bands / ncells / bytes
-        if (years != round(years)) stop(paste("inconsistent data set, calculation of number of years
+        if (years != round(years, digits = 10)) stop(paste("inconsistent data set, calculation of number of years
                                               delivered an non-integer result of", years))
       } else {
         # check for number of years
         ssz <- (ss - headlines) / bands / bytes / years
-        if (round(ssz) != ssz) stop(paste("number of years in file are not", years))
+        if (round(ssz, digits = 10) != ssz) stop(paste("number of years in file are not", years))
       }
 
       outputdimnames <- list()
