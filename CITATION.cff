@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: If you use this software, please cite it using the metadata from this file.
 type: software
 title: 'lpjclass: LPJ Class Functions'
-version: 1.19.6
+version: 1.19.7
 date-released: '2023-06-27'
 abstract: Package containing the LPJ-Object-Class together with relevant functions
   and methods.

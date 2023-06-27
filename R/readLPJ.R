@@ -144,7 +144,7 @@ readLPJ <- function(file_name,               # Filename with or without extentio
       ss  <- as.integer(file.info(file_name)$size)
       ssz <- (ss - headlines) / bands / bytes
       # check for number of bands
-      if (.testInteger(ssz)) {
+      if (!.testInteger(ssz)) {
         obands <- bands
         nofit <- TRUE
         while (nofit) {
@@ -158,7 +158,7 @@ readLPJ <- function(file_name,               # Filename with or without extentio
       # check for number of cells
       ssz <- (ss - headlines) / bands / bytes
       ssz <- as.integer(ssz)
-      if (.testInteger(ssz / ncells)) {
+      if (!.testInteger(ssz / ncells)) {
         if (.testInteger(ssz / 59199)) {
           warning("ncells changed from ", ncells, "to 59199")
           ncells <- 59199
