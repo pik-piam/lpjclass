@@ -59,7 +59,8 @@ the 59199 for MAgPIE be returned?}
 
 \item{gridfile}{a character string, currently not used}
 
-\item{cellyear}{Switch for input data format. Cellyear is the new lpjml input format. When reading in lpjml outputs set to false.}
+\item{cellyear}{Switch for input data format. Cellyear is the new lpjml input format.
+When reading in lpjml outputs set to false.}
 
 \item{flexbands}{reads in cfts for any number of bands, assumes only cfts, must be named later}
 }

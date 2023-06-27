@@ -25,7 +25,8 @@
 #' @param headlines integer. The size of header, for output files = 0
 #' @param datatype a R data type
 #' @param gridfile a character string, currently not used
-#' @param cellyear Switch for input data format. Cellyear is the new lpjml input format. When reading in lpjml outputs set to false.
+#' @param cellyear Switch for input data format. Cellyear is the new lpjml input format.
+#'                 When reading in lpjml outputs set to false.
 #' @param flexbands reads in cfts for any number of bands, assumes only cfts, must be named later
 #' @return \item{x}{LPJ-object}
 #' @author Susanne Rolinski, Benjamin Bodirsky
@@ -79,7 +80,15 @@ readLPJ <- function(file_name,               # Filename with or without extentio
                     cellyear = FALSE,       # switch for reading in binaries in cellyear format
                     flexbands = FALSE) {    # option to read any number of cft bands
 
-  .testInteger <- function(x) {return(all.equal(x, as.integer(x)))}
+  .testInteger <- function(x) {
+    return <- all.equal(x, as.integer(x), tolerance = 10^-6)
+    if (!isTRUE(return)) {
+      message(return)
+      return(FALSE)
+    } else {
+      return(TRUE)
+    }
+  }
 
   if (monthly == TRUE) {
     bands <- 12
