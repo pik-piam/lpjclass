@@ -9,9 +9,8 @@
 #' 
 #' @name lpjclass-package
 #' @aliases lpjclass-package lpjclass
-#' @docType package
 #' @author Susanne Roliniski, Benjamin Bodirsky, Katharina Waha, Jan Philipp
 #' Dietrich
 #' 
 #' Maintainer: Susanne Rolinski <rolinski@@pik-potsdam.de>
-NULL
+"_PACKAGE"
